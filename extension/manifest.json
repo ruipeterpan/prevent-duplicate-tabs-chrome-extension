@@ -1,0 +1,29 @@
+{
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "description": "Patched version of SQ Tech's Prevent Duplicate Tabs 1.8.2, fixing missed exact-URL duplicates from launchers such as Alfred.",
+  "icons": {
+    "128": "icon-128.png",
+    "16": "icon-16.png",
+    "48": "icon-48.png"
+  },
+  "manifest_version": 3,
+  "name": "Prevent Duplicate Tabs \u2014 Patched",
+  "options_ui": {
+    "open_in_tab": true,
+    "page": "options.html"
+  },
+  "permissions": [
+    "contextMenus",
+    "storage",
+    "tabs",
+    "windows"
+  ],
+  "version": "1.8.2.1",
+  "version_name": "1.8.2 + exact-match patch"
+}

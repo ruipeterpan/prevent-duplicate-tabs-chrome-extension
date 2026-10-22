@@ -1,0 +1,36 @@
+Independently maintained patch based on Prevent Duplicate Tabs version 1.8.2.
+Original developer: SQ Tech / Sharoon.
+Store: https://chromewebstore.google.com/detail/prevent-duplicate-tabs/jjnoehggdfcblljkkeijmooameiaiani
+Repository linked by the original UI: https://github.com/sharoon7171/prevent-duplicate-tabs
+
+The extension directory contains the original shipped assets plus a separately
+authored exact-match-fix.js module. background.js imports that module before
+initialization. The local copy has a different identity and does not overwrite
+the installed extension or import its stored preferences.
+
+No upstream license file or original development project was present in the
+installed package. The upstream license remains unresolved. This repository's
+public availability does not grant redistribution rights to the retained
+upstream code, icons, fonts, or other assets. Existing third-party notices are
+retained. No replacement license is asserted over the upstream work. This is
+not an official upstream release and has not been submitted to the Chrome Web
+Store.
+
+Automated checks: run npm test in this directory.
+Rebuild from the installed package: python3 build.py
+
+Manual verification completed on October 21, 2026:
+- Loaded the patched extension in Chrome.
+- Disabled the store version; all live tests used the local version alone.
+- Debugger remained closed throughout the tests.
+- Three fresh-start Calendar bursts: 7, 5, and 4 Alfred bookmark launches.
+- /u/0/r and /u/1/r remained separate; two repeated /u/1/r launches reused its tab.
+- Launching from a second Chrome window focused the existing Calendar window.
+- Chrome reported service worker (Inactive); the next Alfred launch correctly
+  woke it and reused the existing Calendar tab after about 90 seconds idle.
+- Total: 21 Alfred launches, 4 first opens, 17 duplicate closures (confirmed by
+  the popup counter), no surviving unintended duplicates.
+- No Errors control appeared on the local extension details page.
+
+Limits: these tests do not prove universal correctness across all websites or
+Chrome versions. Browser restart and other operating systems were not tested.

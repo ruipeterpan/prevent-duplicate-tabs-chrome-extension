@@ -1,0 +1,21 @@
+{
+  "tested_date": "2026-10-21",
+  "extension_version": "1.8.2.1",
+  "automated_tests_passed": 22,
+  "live_alfred_launches": 21,
+  "fresh_start_bursts": [
+    7,
+    5,
+    4
+  ],
+  "expected_first_opens": 4,
+  "duplicates_prevented_counter": 17,
+  "account_separation_passed": true,
+  "cross_window_focus_passed": true,
+  "worker_inactive_observed": true,
+  "wake_after_idle_passed": true,
+  "debugger_open_during_tests": false,
+  "browser_restart_tested": false,
+  "upstream_license_status": "unresolved",
+  "chrome_web_store_submission": false
+}
